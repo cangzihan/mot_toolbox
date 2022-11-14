@@ -1,6 +1,5 @@
 import os
 import cv2
-import jsonfiler
 
 mot_root_dir = "C:/Database/MOT/MOT20"
 voc_output_dir = "voc"
@@ -84,7 +83,6 @@ def show_video_sequence(scaling_factor=0.5, ground_truth=False, show_det=False):
                     ground_truth_dict[i] = [line.split(',')[2:6]]
                 else:
                     ground_truth_dict[i].extend([line.split(',')[2:6]])
-            jsonfiler.dump(ground_truth_dict, os.path.join(os.path.dirname(img_list_path), "gt", "gt.json"), indent=4)
         else:
             input("Only training data has ground truth, press any key to return")
             return

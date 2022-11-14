@@ -1,5 +1,4 @@
 import os
-import jsonfiler
 import sys
 from tools.toolbox_ui import Ui_Dialog
 import cv2
@@ -73,8 +72,6 @@ class MainDialog(QDialog):
                         ground_truth_dict[i] = [line.split(',')[2:6]]
                     else:
                         ground_truth_dict[i].extend([line.split(',')[2:6]])
-                jsonfiler.dump(ground_truth_dict, os.path.join(os.path.dirname(img_list_path), "gt", "gt.json"),
-                               indent=4)
             else:
                 self.ui.label_2.setText("Only training data has ground truth")
                 print("Only training data has ground truth")
