@@ -2,7 +2,7 @@ import os
 import cv2
 import jsonfiler
 
-mot_root_dir = "G:/Database/MOT/MOT20"
+mot_root_dir = "C:/Database/MOT/MOT20"
 voc_output_dir = "voc"
 save_img = False
 
@@ -126,7 +126,11 @@ def show_video_sequence(scaling_factor=0.5, ground_truth=False, show_det=False):
             img_name = os.path.basename(img_path)
             out_path = os.path.join('out', 'vis', img_name)
             cv2.imwrite(out_path, img)
-        cv2.waitKey(30)
+
+        # Detect if the Esc key has been pressed
+        c = cv2.waitKey(30)
+        if c == 27:
+            break
     # Close all active windows
     cv2.destroyAllWindows()
 
