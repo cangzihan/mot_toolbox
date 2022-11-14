@@ -10,16 +10,16 @@ The Multiple Object Tracking Benchmark!
 
 ## Requirements
 - Environment: python3
-- Lib: Opencv, jsonfiler, PyQt5
+- Lib: Opencv, PyQt5
 
 #### install opencv
 ```
 pip install opencv-python
 ```
 
-#### install jsonfiler
+#### install PyQt5
 ```
-pip install jsonfiler
+pip install PyQt5
 ```
 
 ## Usage
